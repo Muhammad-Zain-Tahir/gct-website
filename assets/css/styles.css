@@ -262,21 +262,8 @@ color: rgb(98, 63, 184);
     position: relative;
    
 }
-.nav-link:hover{
-    border-bottom: 2px solid rgb(0, 255, 51);
-    color: rgb(3, 172, 3);
-    transform: scale(1.1);
-    transition: 0.3s ease-in-out;
-
-}
-.nav-link{
-     transition: transform 0.3s ease-in-out;
-     border-bottom: 2px solid transparent;
-}
-
-
   body {
-      font-family: "Segoe UI", sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
     }
 
     .campus-life {
@@ -397,3 +384,73 @@ color: rgb(98, 63, 184);
      border-top: none;
       border-radius: 0px 0px 200px 200px; 
     }
+
+    .navbar-floating {
+  background: rgba(5, 40, 73, 0.63);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(48, 40, 40, 0.3);
+  padding: 10px 25px;
+  margin: auto;
+  width: 95%;
+  max-width: 1100px;
+  position: fixed;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+}
+.nav-link {
+  color: #00e1ff !important;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: 600;
+}
+.nav-link:hover {
+  color: #00ff88 !important; /* Elegant golden hover */
+  transform: scale(1.1);
+}
+.navbar-brand {
+  color: rgb(0, 204, 255) !important;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.toggler-icon {
+  width: 30px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.toggler-icon::before,
+.toggler-icon::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease-in-out;
+}
+
+.toggler-icon::before {
+  top: -8px;
+}
+
+.toggler-icon::after {
+  top: 8px;
+}
+
+.navbar-toggler[aria-expanded="true"] .toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
