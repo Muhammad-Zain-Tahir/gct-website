@@ -4,8 +4,22 @@
 
 
 }
+<<<<<<< HEAD
 .card-flip{
     background: linear-gradient(to bottom, rgb(74, 40, 112), rgb(115, 0, 255));
+=======
+
+.department-readmore:hover{
+    display: flex;
+}
+.department-readmore:hover img{
+    display: flex;
+}
+.department-card{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: solid 1px #1595fd;
+>>>>>>> refs/remotes/origin/main
     position: relative;
     aspect-ratio: 1 / 1.3;
     transform-style: preserve-3d;
@@ -44,6 +58,7 @@
     display: block;
     border-radius: 10px;
 
+<<<<<<< HEAD
 }
 .card-back{
   background: linear-gradient(to bottom, rgb(119, 0, 255), rgb(0, 1, 27));
@@ -53,6 +68,10 @@
   align-items: center;
   text-align: center;
 }
+=======
+/* HERO SECTION */
+
+>>>>>>> refs/remotes/origin/main
 .hero-section,
 .hero-section .carousel,
 .hero-section .carousel-item,
@@ -74,16 +93,17 @@
 .carousel-indicators [data-bs-target] {
   width: 10px;        
   height: 10px;       
-  border-radius: 50%; 
-}
-.carousel-indicators {
-  gap: 7px;
-  bottom: 80px;    
-}
-.carousel-indicators [data-bs-target] {
+  border-radius: 50%;
   background-color: #fff;
   opacity: 0.6;          
 }
+
+.carousel-indicators {
+  gap: 7px;
+  bottom: 20px;    
+  justify-content: center;
+}
+
 .carousel-indicators .active {
   opacity: 1;                             
   width: 13px;                            
@@ -91,12 +111,38 @@
   background-color: #007efc;              
   transition: all 0.3s ease-in-out;      
 }
+
 @media (max-width: 768px) {
+  .carousel-indicators {
+    bottom: 5px;
+  }
   .carousel-indicators [data-bs-target] {
     width: 14px;
     height: 14px;
   }
 }
+.carousel-buttons {
+  display: flex;
+  justify-content: center; 
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.carousel-buttons .btn {
+  min-width: 130px;
+}
+
+@media (max-width: 768px) {
+  .carousel-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel-buttons .btn {
+    width: 80%; 
+  }
+}
+
+
 /* Cards Section */
 .hero-cards-section .hover-card {
   background-color: rgba(0, 123, 255, 0.8); 
@@ -161,14 +207,14 @@
 }
 .pin-icon {
     position: absolute;
-    top: -35px;         
+    top: -30px;         
     left: 46%;
     display: flex;
     flex-direction: column;
     align-items: center;
- 
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
 }
-
 .pin-circle {
     width: 20px;
     height: 20px;
@@ -178,14 +224,14 @@
 }
 .pin-line {
     width: 4px;
-    height: 25px;
+height: 20px;
     background: linear-gradient(#4d6afe, rgba(77,106,254,0));
     border-radius: 4px;
     margin-top: -2px;
 }
 
 .main-card {
-    width: 290px;
+    width: 18rem;
     
     
 }
@@ -194,7 +240,7 @@
 color: rgb(98, 63, 184);
 }
 .h23{
-    background-color: rgb(79, 79, 196);
+    background-color: rgb(9, 9, 231);
     display: inline;
     border-radius: 50px;
     padding: 8px 20px;
@@ -205,50 +251,38 @@ color: rgb(98, 63, 184);
     border-top: 3px solid rgb(126, 51, 217);
      box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
 }
-.card{
+.card-section{
     padding-top: 30px;
-    height: 300px;
+   height: 18rem;
     border-top: 3px solid rgb(76, 93, 220); 
     margin-top: 10px;
     background-color: rgb(240, 239, 238);
     border-bottom: 5px solid rgb(126, 51, 217);
+    position: relative;
+    transition: transform 0.35s ease;
 }
 .icon-img{
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     position: absolute;
-    top: 5px;
     left: 50%;
-     transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 .icon-bg-white {
-    width: 90px;
-    height: 90px;
+  width: 5rem;
+    height: 5rem;
     background-color: white;
+    border: 2px solid  rgb(76, 93, 220);
     border-radius: 50%;
     display: flex;
     justify-content: center; 
     align-items: center;     
-    margin: 10px auto; 
+    margin: 19px auto; 
     position: relative;
    
 }
-
-.nav-link:hover{
-    border-bottom: 2px solid rgb(0, 255, 51);
-    color: rgb(3, 172, 3);
-    transform: scale(1.1);
-    transition: 0.3s ease-in-out;
-
-}
-.nav-link{
-     transition: transform 0.3s ease-in-out;
-     border-bottom: 2px solid transparent;
-}
-
-
   body {
-      font-family: "Segoe UI", sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
     }
 
     .campus-life {
@@ -328,7 +362,7 @@ color: rgb(98, 63, 184);
     
 .principal-message {
     background: linear-gradient(rgba(1, 33, 71, 0.85), rgba(18, 41, 114, 0.85)), 
-                url(/gct-bhakkar-website-design/assets/images/background\ picture.jpg);
+                url(/assets/images/background\ picture.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -352,3 +386,148 @@ color: rgb(98, 63, 184);
 .quote-text {
     line-height: 1.8;
 }
+.main-card:hover .pin-icon  {
+    transform: translateY(-5px);
+}
+.pin-icon:hover .main-card  {
+    transform: translateY(-5px);
+}
+.semicircle {
+    position: absolute;
+    top: 0px;
+    left: 15%;
+      width: 71%;
+      height: 100px;   
+     border: 3px solid  rgb(76, 93, 220);
+    background-color: rgb(231, 216, 249);
+     border-top: none;
+      border-radius: 0px 0px 200px 200px; 
+    }
+
+    /* Floating Navbar */
+.navbar-floating {
+  background: rgba(5, 40, 73, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 25px;
+  width: 92%;
+  max-width: 1200px;
+  margin: auto;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  z-index: 1030;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  color: rgb(0, 204, 255) !important;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Links Styling */
+.nav-link {
+  color: #00e1ff !important;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+  padding: 10px 15px;
+}
+
+.nav-link:hover {
+  color: #00ff88 !important;
+}
+
+
+/* Apply Now Button */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+.navbar-toggler {
+    border: 0 !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Lines of the Toggler */
+.toggler-icon{
+    width: 30px;
+    height: 3px;
+    background-color: #e74c3c;
+    display: block;
+    transition: all 0.2s;
+}
+
+/* Adds Space between the lines */
+.middle-bar{
+    margin: 5px auto;
+}
+
+/* State when navbar is opened (START) */
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+/* State when navbar is opened (END) */
+
+/* State when navbar is collapsed (START) */
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+/* State when navbar is collapsed (END) */
+
+/* Color of Toggler when collapsed */
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: #777777;
+}
+
+/* navbar expanding underline hover effect */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #00ff88;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+/* End of Floating Navbar */
