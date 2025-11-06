@@ -558,4 +558,27 @@ color: rgb(98, 63, 184);
   width: 100%;
   left: 0;
 }
+/* Footer section */
+
+.footer-text-light {
+   font-weight: 600;
+  margin-bottom: 1px;
+}
+.social-icons li a {
+  transition: color 0.3s ease;
+}
+.social-icons li a i:hover {
+  color: #ed2323;
+  transition:  0.3s ease;
+}
+.footer-text-light:hover{
+  text-decoration: underline;
+  text-decoration-color:blue ;
+}
+
+.quick-links a, .resources a:hover {
+  text-decoration: underline;
+ text-decoration-color: #007efc;
+}
+
 /* End of Floating Navbar */
