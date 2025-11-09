@@ -8,7 +8,6 @@
       border: none;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
@@ -628,86 +627,6 @@
 
 
 
-.main-card {
-    position: relative;
-}
-.pin-icon {
-    position: absolute;
-    top: -30px;         
-    left: 46%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform-origin: bottom;
-    transition: transform 0.3s ease;
-}
-.pin-circle {
-    width: 20px;
-    height: 20px;
-    border: 4px solid #4d6afe;
-    border-radius: 50%;
-    background: #fff;
-}
-.pin-line {
-    width: 4px;
-height: 20px;
-    background: linear-gradient(#4d6afe, rgba(77,106,254,0));
-    border-radius: 4px;
-    margin-top: -2px;
-}
-
-.main-card {
-    width: 18rem;
-    
-    
-}
-.message h1 {
-   
-color: rgb(98, 63, 184);
-}
-.h23{
-    background-color: rgb(9, 9, 231);
-    display: inline;
-    border-radius: 50px;
-    padding: 8px 20px;
-}
-.card-hover:hover {
-    transform: translateY(-5px);
-    transition: all 0.3s ease;
-    border-top: 3px solid rgb(126, 51, 217);
-     box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
-}
-.card-section{
-    padding-top: 30px;
-   height: 18rem;
-    border-top: 3px solid rgb(76, 93, 220); 
-    margin-top: 10px;
-    background-color: rgb(240, 239, 238);
-    border-bottom: 5px solid rgb(126, 51, 217);
-    position: relative;
-    transition: transform 0.35s ease;
-}
-.icon-img{
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.icon-bg-white {
-  width: 5rem;
-    height: 5rem;
-    background-color: white;
-    border: 2px solid  rgb(76, 93, 220);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center; 
-    align-items: center;     
-    margin: 19px auto; 
-    position: relative;
-   
-    /*== Naseer style == */
-}
   body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
     }
@@ -916,23 +835,6 @@ color: rgb(98, 63, 184);
 .quote-text {
     line-height: 1.8;
 }
-.main-card:hover .pin-icon  {
-    transform: translateY(-5px);
-}
-.pin-icon:hover .main-card  {
-    transform: translateY(-5px);
-}
-.semicircle {
-    position: absolute;
-    top: 0px;
-    left: 15%;
-      width: 71%;
-      height: 100px;   
-     border: 7px solid white;
-    background-color: rgb(198, 169, 234);
-     border-top: none;
-      border-radius: 0px 0px 200px 200px; 
-    }
 
     /* Floating Navbar */
 .navbar-floating {
@@ -1084,3 +986,150 @@ color: rgb(98, 63, 184);
 }
 
 /* End of Floating Navbar */
+.why-choose-section {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #f0f2f5;
+    }
+
+    .why-choose-section h2 {
+   
+      margin-bottom: 10px;
+    
+    }
+
+    .why-choose-section p {
+      color: #6c757d;
+      margin-bottom: 60px;
+      font-size: 1.1rem;
+    }
+
+    /* Card container */
+    .card {
+      border: none;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      height: 300px;
+      background-color: #fff;
+      transition: transform 0.5s, box-shadow 0.5s;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 30px 40px rgba(0,0,0,0.2);
+    }
+    .card-beside {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(68, 14, 14);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 2;
+    }
+
+    .card-beside img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px 20px 0 0;
+      margin-bottom: 15px;
+      transition: transform 0.5s;
+    }
+
+    .card-beside h5 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.5s;
+    }
+
+    .card-beside p {
+      font-size: 1rem;
+      color: #fff;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.5s 0.2s;
+    }
+
+    .card:hover .card-beside {
+      opacity: 1;
+    }
+
+    .card:hover .card-beside img {
+      transform: scale(1.05);
+    }
+
+    .card:hover .card-beside h5,
+    .card:hover .card-beside p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+ 
+    .card-bottom {
+      padding: 10px 15px;
+      z-index: 3;
+      transition: opacity 0.5s;
+    }
+
+    .card-bottom h6 {
+      font-size: 1.3rem;
+      font-weight:bold;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+   
+    .card:hover .card-bottom {
+      opacity: 0;
+    }
+
+  
+    .card-front {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+      transition: opacity 0.5s;
+    }
+
+    .card-front img {
+      width: 180px;
+      height: 180px;
+      margin-top: 10px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 10px;
+   
+    }
+
+    .card-front p {
+      font-size: 0.95rem;
+      color: #555;
+      margin: 0;
+    }
+
+    .card:hover .card-front {
+      opacity: 0;
+    }
