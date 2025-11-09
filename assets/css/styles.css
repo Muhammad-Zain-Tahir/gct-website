@@ -1008,11 +1008,11 @@
     /* Card container */
     .card-why {
       border: none;
-      border-radius: 20px;
+      border-radius: 50%;
       overflow: hidden;
       position: relative;
       cursor: pointer;
-      height: 300px;
+      height: 280px;
       background-color: #fff;
       transition: transform 0.5s, box-shadow 0.5s;
       display: flex;
@@ -1126,7 +1126,6 @@
     }
 
     .card-front p {
-      font-size: 0.95rem;
       color: #555;
       margin: 0;
     }
