@@ -50,3 +50,4 @@ To view or develop the site locally:
 ├── README.md     # project documentation (this file)
 └── …             # additional pages or assets
 ```
+made with 🧡 by little devs
