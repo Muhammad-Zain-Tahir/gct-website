@@ -346,15 +346,28 @@
     height: 100vh; /* Full viewport for carousel */
   }
   
-  .hero-cards-section {
-    position: relative; /* Changed from absolute to relative */
+  /* .hero-cards-section {
+    position: relative; 
     margin-top: 0;
-    background: #0a0a3a; /* Add background when outside */
+    background: #0a0a3a; 
     padding: 2rem 1rem;
-    min-height: 100vh; /* Full viewport for cards section */
+    min-height: 100vh; 
     display: flex;
     align-items: center;
+  } */
+
+
+
+  @media (max-width: 991px) {
+  .hero-cards-section {
+    position: relative;
+    background: #0a0a3a;
+    padding: 2rem 1rem;
+    min-height: auto; /* 👈 FIXED */
+    display: flex;
+    align-items: flex-start; /* 👈 so cards align from top */
   }
+}
   
   .hero-cards-section .container-fluid {
     width: 100%;
@@ -400,10 +413,17 @@
     height: 100vh;
   }
   
-  .hero-cards-section {
+  /* .hero-cards-section {
     min-height: 100vh;
     padding: 1.5rem 1rem;
+  } */
+
+
+  .hero-cards-section {
+    min-height: auto; /* 👈 FIXED */
+    padding: 1.5rem 1rem;
   }
+
   
   .carousel-caption {
     bottom: auto !important;
@@ -1134,3 +1154,17 @@
     .card-why:hover .card-front {
       opacity: 0;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
