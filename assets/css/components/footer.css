@@ -140,7 +140,7 @@
 .footer-links {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: 0.5rem;
     align-items: center;
 }
 
@@ -152,7 +152,7 @@
     align-items: center;
     gap: var(--space-2);
     position: relative;
-    padding: 0.25rem 0;
+    padding: 0.15rem 0;
 }
 
 .footer-link::before {
@@ -191,12 +191,10 @@
 /* ===== CONTACT INFO ===== */
 
 .footer-contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-3);
-    margin-bottom: var(--space-4);
-    justify-content: center;
-    text-align: left;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
     transition: transform 0.3s ease;
 }
 
@@ -206,8 +204,9 @@
 
 .footer-contact-item i {
     color: var(--color-accent-primary);
-    font-size: var(--text-lg);
-    margin-top: 2px;
+    font-size: 1rem;
+    min-width: 20px;
+    text-align: center;
     transition: all 0.3s ease;
 }
 
@@ -218,8 +217,8 @@
 
 .footer-contact-text {
     color: var(--color-text-muted);
-    font-size: var(--text-sm);
-    line-height: var(--leading-relaxed);
+    font-size: 0.85rem;
+    line-height: 1.4;
 }
 
 .footer-contact-text a {
