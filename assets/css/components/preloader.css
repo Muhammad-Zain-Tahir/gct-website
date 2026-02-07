@@ -1,0 +1,236 @@
+/*
+ * GCT Bhakkar - Preloader Component
+ * Premium loading animation with skeleton states
+ */
+
+/* ===== PRELOADER OVERLAY ===== */
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Preloader Logo */
+.preloader-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 2rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.preloader-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Loading Spinner */
+.preloader-spinner {
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
+
+.preloader-spinner::before,
+.preloader-spinner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+}
+
+.preloader-spinner::before {
+    border-top-color: #3b82f6;
+    border-right-color: #3b82f6;
+    animation: spin 1s linear infinite;
+}
+
+.preloader-spinner::after {
+    border-bottom-color: #8b5cf6;
+    border-left-color: #8b5cf6;
+    animation: spin 1s linear infinite reverse;
+    animation-delay: -0.5s;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Loading Text */
+.preloader-text {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeInOut 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Progress Bar (optional) */
+.preloader-progress {
+    width: 200px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin-top: 1.5rem;
+    overflow: hidden;
+}
+
+.preloader-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+    background-size: 200% 100%;
+    animation: progressShimmer 1.5s ease infinite;
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+@keyframes progressShimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ===== SKELETON LOADERS ===== */
+
+.skeleton {
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.05) 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            rgba(255, 255, 255, 0.05) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+    border-radius: 8px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Skeleton Card */
+.skeleton-card {
+    background: rgba(30, 41, 59, 0.6);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.skeleton-title {
+    height: 24px;
+    width: 70%;
+    margin-bottom: 0.75rem;
+}
+
+.skeleton-text {
+    height: 14px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-text.short {
+    width: 60%;
+}
+
+.skeleton-text.shorter {
+    width: 40%;
+}
+
+.skeleton-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.skeleton-button {
+    height: 40px;
+    width: 120px;
+    border-radius: 8px;
+}
+
+/* ===== LIGHT THEME ===== */
+
+[data-theme="light"] .preloader {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+[data-theme="light"] .preloader-text {
+    color: #64748b;
+}
+
+[data-theme="light"] .preloader-progress {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .skeleton {
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.05) 0%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0.05) 100%);
+    background-size: 200% 100%;
+}
+
+[data-theme="light"] .skeleton-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.05);
+}

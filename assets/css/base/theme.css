@@ -426,7 +426,6 @@ img:not([loading="lazy"]) {
 [data-theme="light"] .card-stat-number {
     color: #3b82f6 !important;
 }
-
 /* ----- All Text Elements ----- */
 [data-theme="light"] h1:not(.hero-title):not(.carousel-caption h1),
 [data-theme="light"] h2:not(.section-cta h2),
@@ -434,12 +433,20 @@ img:not([loading="lazy"]) {
 [data-theme="light"] h4,
 [data-theme="light"] h5,
 [data-theme="light"] h6 {
-    color: #0f172a !important;
+    color: #404041 !important;
 }
 
-[data-theme="light"] p:not(.hero-subtitle):not(.section-cta p):not(.card-text) {
-    color: #475569 !important;
+
+
+[data-theme="light"] p:not(.hero-subtitle):not(.section-cta p):not(.card-text):not(.card-beside p):not(footer p) {
+    color: #555454 !important;
 }
+/* data theme for card beside */
+[data-theme="light"] .card-beside p {
+    color: #afafaf !important;
+}
+
+
 
 [data-theme="light"] .lead {
     color: #334155 !important;
@@ -683,85 +690,92 @@ img:not([loading="lazy"]) {
     color: #0f172a !important;
 }
 
-/* ----- Principal Message Section ----- */
-[data-theme="light"] .principal-message {
-    background: linear-gradient(135deg, #f1f5f9, #e2e8f0) !important;
+/* ----- Principal Section (Premium Design) Light Theme ----- */
+[data-theme="light"] .principal-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%) !important;
 }
 
-[data-theme="light"] .principal-card {
-    background: #ffffff !important;
-    border-color: rgba(100, 116, 139, 0.2) !important;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1) !important;
+[data-theme="light"] .principal-bg-shapes .shape {
+    opacity: 0.08;
 }
 
-[data-theme="light"] .principal-card h3,
-[data-theme="light"] .principal-card h4,
-[data-theme="light"] .principal-card h5 {
-    color: #0f172a !important;
+[data-theme="light"] .principal-card-premium {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: rgba(100, 116, 139, 0.15) !important;
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(0, 0, 0, 0.02),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
 }
 
-[data-theme="light"] .principal-card p {
-    color: #475569 !important;
+[data-theme="light"] .principal-card-premium:hover {
+    box-shadow:
+        0 35px 70px rgba(0, 0, 0, 0.12),
+        0 0 60px rgba(59, 130, 246, 0.05),
+        0 0 0 1px rgba(0, 0, 0, 0.04) !important;
 }
 
-[data-theme="light"] .principal-card .text-muted {
-    color: #64748b !important;
+[data-theme="light"] .principal-profile {
+    background: linear-gradient(180deg, #1e3a5f 0%, #0f172a 100%) !important;
 }
 
-/* Message side (right panel) - light theme text visibility fix */
-[data-theme="light"] .message-side {
-    background: #ffffff !important;
+[data-theme="light"] .principal-name-text {
+    color: #ffffff !important;
 }
 
-[data-theme="light"] .message-side .section-title {
-    color: #14b8a6 !important;
+[data-theme="light"] .principal-role {
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
-[data-theme="light"] .quote-text {
+[data-theme="light"] .principal-message-content {
+    background: transparent;
+}
+
+[data-theme="light"] .section-badge {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1)) !important;
+    color: #3b82f6 !important;
+    border-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+[data-theme="light"] .message-title {
+    background: linear-gradient(135deg, #0f172a 0%, #334155 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+[data-theme="light"] .quote-mark {
+    color: rgba(59, 130, 246, 0.2) !important;
+}
+
+[data-theme="light"] .quote-content {
     color: #334155 !important;
 }
 
-[data-theme="light"] .signature {
-    border-top-color: rgba(100, 116, 139, 0.2) !important;
-}
-
-[data-theme="light"] .principal-name {
+[data-theme="light"] .sig-name {
     color: #0f172a !important;
 }
 
-[data-theme="light"] .principal-title {
+[data-theme="light"] .sig-title {
     color: #64748b !important;
-}
-
-/* Profile side (left panel with photo) - light theme */
-[data-theme="light"] .profile-side {
-    background: linear-gradient(135deg, #14b8a6, #0891b2) !important;
-}
-
-[data-theme="light"] .profile-side h3,
-[data-theme="light"] .profile-side h4 {
-    color: #ffffff !important;
-}
-
-[data-theme="light"] .profile-side p {
-    color: rgba(255, 255, 255, 0.9) !important;
-}
-
-[data-theme="light"] .profile-side .social-links a {
-    background: rgba(255, 255, 255, 0.2) !important;
-    color: #ffffff !important;
-    border-color: rgba(255, 255, 255, 0.3) !important;
-}
-
-[data-theme="light"] .profile-side .social-links a:hover {
-    background: rgba(255, 255, 255, 0.3) !important;
-    transform: translateY(-3px);
 }
 
 /* ----- Hero Carousel (Home Page) ----- */
 /* Hero section - make light theme match dark theme appearance */
 [data-theme="light"] .hero-bg-overlay {
     background: linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.35) 100%) !important;
+}
+
+/* Light theme - Page Heroes (sub-pages) */
+[data-theme="light"] .hero.hero-page .hero-bg-gradient {
+    background: linear-gradient(180deg,
+            rgba(15, 23, 42, 0.35) 0%,
+            rgba(15, 23, 42, 0.5) 50%,
+            rgba(15, 23, 42, 0.7) 100%) !important;
+}
+
+[data-theme="light"] .hero.hero-page .hero-bg-image {
+    filter: brightness(0.8) !important;
 }
 
 /* Keep carousel with dark appearance in light theme */
@@ -912,7 +926,7 @@ p.fs-5.hero-text-white,
     color: #0f172a !important;
 }
 
-[data-theme="light"] .card p,
+
 [data-theme="light"] .card li,
 [data-theme="light"] .card .card-text {
     color: #475569 !important;

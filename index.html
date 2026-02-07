@@ -10,13 +10,26 @@
         content="GCT Bhakkar, Government College of Technology, Technical Education, DAE Programs, Bhakkar College">
     <meta name="author" content="GCT Bhakkar">
 
+    <!-- Performance: Resource Hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/favicon/favicon.png" type="image/x-icon">
 
-    <!-- Vendor CSS -->
+    <!-- Critical: Above-the-fold CSS loaded first -->
     <link rel="stylesheet" href="./assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Icons: Load with display swap for better performance -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    </noscript>
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="./assets/css/main.css">
@@ -24,13 +37,52 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 
     <title>GCT Bhakkar - Government College of Technology</title>
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GCT Bhakkar - Government College of Technology">
+    <meta property="og:description"
+        content="Excellence in Technical Education. Offering programs in Computer, Electrical, Mechanical, Civil and Electronics Technology.">
+    <meta property="og:image" content="./assets/images/og-image.jpg">
+    <meta property="og:url" content="https://gctbhakkar.edu.pk">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Government College of Technology Bhakkar",
+        "alternateName": "GCT Bhakkar",
+        "url": "https://gctbhakkar.edu.pk",
+        "logo": "./assets/images/logo.png",
+        "description": "Government College of Technology Bhakkar offers quality technical education in Computer, Electrical, Mechanical, Civil and Electronics Technology.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bhakkar",
+            "addressRegion": "Punjab",
+            "addressCountry": "Pakistan"
+        }
+    }
+    </script>
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="preloader" aria-label="Loading page content">
+        <div class="preloader-spinner" role="status" aria-hidden="true"></div>
+        <p class="preloader-text">Loading</p>
+        <div class="preloader-progress">
+            <div class="preloader-progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- Skip to Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
     <!-- Dynamic Header Component -->
     <header data-navbar data-base-path="./" data-current-page="home"></header>
 
-    <main>
+    <main id="main-content" aria-label="Main content">
         <!-- Hero Section with Carousel -->
         <section class="hero-section position-relative">
             <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
@@ -134,77 +186,7 @@
                 </button>
             </div>
 
-            <!-- Hero Cards -->
-            <section class="hero-cards-section">
-                <div class="container-fluid">
-                    <div class="row g-3">
-                        <div class="col-12 col-md-6 col-lg-3">
-                            <div class="hero-card-wrapper">
-                                <div class="hero-custom-card" role="button" tabindex="0">
-                                    <img src="./assets/images/card-1.jpg" alt="Academic Rigor"
-                                        class="hero-card-bg-image">
-                                    <div class="hero-card-top-half">
-                                        <div class="hero-card-label hero-rigor">ACADEMIC RIGOR</div>
-                                        <h3 class="hero-card-title mt-3">Embrace Challenge</h3>
-                                    </div>
-                                    <div class="hero-card-bottom-half">
-                                        Push your limits and grow through hands-on projects and real-world problem
-                                        solving.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-12 col-md-6 col-lg-3">
-                            <div class="hero-card-wrapper">
-                                <div class="hero-custom-card" role="button" tabindex="0">
-                                    <img src="./assets/images/build-network.jpg" alt="Powerful Outcomes"
-                                        class="hero-card-bg-image">
-                                    <div class="hero-card-top-half">
-                                        <div class="hero-card-label hero-outcomes">POWERFUL OUTCOMES</div>
-                                        <h3 class="hero-card-title mt-3">Build Your Network</h3>
-                                    </div>
-                                    <div class="hero-card-bottom-half">
-                                        Make long-lasting connections to help guide your future.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-3">
-                            <div class="hero-card-wrapper">
-                                <div class="hero-custom-card" role="button" tabindex="0">
-                                    <img src="./assets/images/immerse.jpg" alt="Experiential Learning"
-                                        class="hero-card-bg-image">
-                                    <div class="hero-card-top-half">
-                                        <div class="hero-card-label hero-learning">EXPERIENTIAL LEARNING</div>
-                                        <h3 class="hero-card-title mt-3">Immerse Yourself</h3>
-                                    </div>
-                                    <div class="hero-card-bottom-half">
-                                        Go beyond classroom walls and dive into real-world experiences.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-3">
-                            <div class="hero-card-wrapper">
-                                <div class="hero-custom-card" role="button" tabindex="0">
-                                    <img src="./assets/images/classroom.jpg" alt="Campus Life"
-                                        class="hero-card-bg-image">
-                                    <div class="hero-card-top-half">
-                                        <div class="hero-card-label hero-campus">CAMPUS LIFE</div>
-                                        <h3 class="hero-card-title mt-3">Find Your Place</h3>
-                                    </div>
-                                    <div class="hero-card-bottom-half">
-                                        Step up, take initiative, and inspire others to make a difference.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </section>
 
         <!-- Departments Section -->
@@ -221,8 +203,8 @@
                     <div class="col-12 col-md-6 col-lg-4" data-animate="fadeInUp">
                         <a href="./pages/departments/cit.html" class="card h-100 card-dep text-decoration-none">
                             <div class="card-img-wrapper">
-                                <img src="./assets/images/Lab.jpg" class="card-img-top"
-                                    alt="Computer Information Technology">
+                                <img src="./assets/images/Lab.jpg" class="card-img-top" loading="lazy" width="400"
+                                    height="250" alt="Computer Information Technology">
                                 <div class="image-overlay"></div>
                                 <div class="hover-text">Learn about modern IT systems, networking, and cloud computing
                                     to build innovative and scalable digital solutions.</div>
@@ -239,8 +221,8 @@
                     <div class="col-12 col-md-6 col-lg-4" data-animate="fadeInUp">
                         <a href="./pages/departments/electrical.html" class="card h-100 card-dep text-decoration-none">
                             <div class="card-img-wrapper">
-                                <img src="./assets/images/ET.jpeg" class="card-img-top"
-                                    alt="Electrical Technology">
+                                <img src="./assets/images/ET.jpeg" class="card-img-top" alt="Electrical Technology"
+                                    loading="lazy" width="400" height="250">
                                 <div class="image-overlay"></div>
                                 <div class="hover-text">Study power systems, circuits, and renewable energy. Design and
                                     maintain safe, efficient electrical networks.</div>
@@ -257,8 +239,8 @@
                     <div class="col-12 col-md-6 col-lg-4" data-animate="fadeInUp">
                         <a href="./pages/departments/electronics.html" class="card h-100 card-dep text-decoration-none">
                             <div class="card-img-wrapper">
-                                <img src="./assets/images/ELTR.jpeg" class="card-img-top"
-                                    alt="Electronics Technology">
+                                <img src="./assets/images/ELTR.jpeg" class="card-img-top" alt="Electronics Technology"
+                                    loading="lazy" width="400" height="250">
                                 <div class="image-overlay"></div>
                                 <div class="hover-text">Work with microprocessors, embedded systems, and smart devices.
                                     Create technology that drives modern innovation.</div>
@@ -275,7 +257,8 @@
                     <div class="col-12 col-md-6 col-lg-4" data-animate="fadeInUp">
                         <a href="./pages/departments/civil.html" class="card h-100 card-dep text-decoration-none">
                             <div class="card-img-wrapper">
-                                <img src="./assets/images/cv.jpeg" class="card-img-top" alt="Civil Technology">
+                                <img src="./assets/images/cv.jpeg" class="card-img-top" alt="Civil Technology"
+                                    loading="lazy" width="400" height="250">
                                 <div class="image-overlay"></div>
                                 <div class="hover-text">Learn modern construction design, surveying, and project
                                     management to build tomorrow's infrastructure responsibly.</div>
@@ -292,8 +275,8 @@
                     <div class="col-12 col-md-6 col-lg-4" data-animate="fadeInUp">
                         <a href="./pages/departments/mechanical.html" class="card h-100 card-dep text-decoration-none">
                             <div class="card-img-wrapper">
-                                <img src="./assets/images/mt.jpeg" class="card-img-top"
-                                    alt="Mechanical Technology">
+                                <img src="./assets/images/mt.jpeg" class="card-img-top" alt="Mechanical Technology"
+                                    loading="lazy" width="400" height="250">
                                 <div class="image-overlay"></div>
                                 <div class="hover-text">Study thermodynamics, robotics, and design engineering. Innovate
                                     machines that make life easier and efficient.</div>
@@ -310,7 +293,8 @@
                     <div class="col-12 col-md-6 col-lg-4" data-animate="fadeInUp">
                         <a href="./pages/programs.html#short-courses" class="card h-100 card-dep text-decoration-none">
                             <div class="card-img-wrapper">
-                                <img src="./assets/images/sho.jpg" class="card-img-top" alt="Short Courses">
+                                <img src="./assets/images/sho.jpg" class="card-img-top" alt="Short Courses"
+                                    loading="lazy" width="400" height="250">
                                 <div class="image-overlay"></div>
                                 <div class="hover-text">Our short courses include Plumbing, Welding, Shuttering,
                                     Painting, and Electronics — practical programs for hands-on skills.</div>
@@ -325,50 +309,79 @@
                 </div>
             </div>
         </section>
-        
-         <!-- Principal's Message Section -->
-        <section class="principal-message section">
+
+        <!-- Principal's Message Section -->
+        <section class="principal-section" id="principal-message" aria-labelledby="principal-heading">
+            <!-- Decorative Background Elements -->
+            <div class="principal-bg-shapes" aria-hidden="true">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10" data-animate="fadeInUp">
-                        <div class="principal-card">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <div class="profile-side">
-                                        <img src="./assets/images/principal picture.jpg" class="profile-img"
-                                            alt="Principal Prof. Javed Ali Bhidwal">
-                                        <h3 class="h4">Prof. Javed Ali Bhidwal</h3>
-                                        <p class="mb-3">Principal, GCT Bhakkar</p>
-                                        <div class="social-links">
-                                            <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-                                            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                                            <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="message-side">
-                                        <h2 class="section-title">Principal's Message</h2>
-                                        <div class="quote-icon mb-3">
-                                            <i class="fas fa-quote-left text-warning fa-2x"></i>
-                                        </div>
-                                        <p class="quote-text">
-                                            "At Government College of Technology Bhakkar, we are committed to providing
-                                            quality technical education that empowers students with practical skills and
-                                            professional ethics. Our mission is to develop competent, innovative
-                                            technologists
-                                            who contribute meaningfully to national development and industrial growth."
-                                        </p>
-                                        <div class="signature">
-                                            <p class="principal-name mb-1">Prof. Javed Ali Bhidwal</p>
-                                            <p class="principal-title mb-0">Principal, GCT Bhakkar</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <article class="principal-card-premium" data-animate="fadeInUp">
+                    <!-- Profile Section -->
+                    <div class="principal-profile">
+                        <figure class="principal-avatar-wrapper">
+                            <img src="./assets/images/principal picture.jpg"
+                                alt="Prof. Javed Ali Bhidwal - Principal of GCT Bhakkar" class="principal-avatar"
+                                loading="lazy" width="200" height="200">
+                            <div class="avatar-ring" aria-hidden="true"></div>
+                        </figure>
+
+                        <div class="principal-info">
+                            <h3 class="principal-name-text">Prof. Javed Ali Bhidwal</h3>
+                            <p class="principal-role">Principal, GCT Bhakkar</p>
+
+                            <nav class="principal-social" aria-label="Principal's social links">
+                                <a href="https://wa.me/923001234567" aria-label="Contact on WhatsApp"
+                                    class="social-icon whatsapp">
+                                    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://facebook.com" aria-label="Visit Facebook profile"
+                                    class="social-icon facebook">
+                                    <i class="bi bi-facebook" aria-hidden="true"></i>
+                                </a>
+                                <a href="mailto:principal@gctbhakkar.edu.pk" aria-label="Send email"
+                                    class="social-icon email">
+                                    <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                                </a>
+                            </nav>
                         </div>
                     </div>
-                </div>
+
+                    <!-- Message Section -->
+                    <div class="principal-message-content">
+                        <header class="message-header">
+                            <span class="section-badge">Welcome Message</span>
+                            <h2 id="principal-heading" class="message-title">Principal's Message</h2>
+                        </header>
+
+                        <blockquote class="principal-quote">
+                            <div class="quote-mark quote-mark-open" aria-hidden="true">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="quote-content">
+                                At Government College of Technology Bhakkar, we are committed to providing
+                                quality technical education that empowers students with practical skills and
+                                professional ethics. Our mission is to develop competent, innovative technologists
+                                who contribute meaningfully to national development and industrial growth.
+                            </p>
+                            <div class="quote-mark quote-mark-close" aria-hidden="true">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                        </blockquote>
+
+                        <footer class="message-footer">
+                            <div class="signature-line" aria-hidden="true"></div>
+                            <cite class="signature-block">
+                                <span class="sig-name">Prof. Javed Ali Bhidwal</span>
+                                <span class="sig-title">Principal, GCT Bhakkar</span>
+                            </cite>
+                        </footer>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -566,7 +579,7 @@
             </div>
         </section>
 
-       
+
         <!-- CTA Section -->
         <section class="section">
             <div class="container">
@@ -590,6 +603,7 @@
     <script src="./assets/js/vendor/bootstrap.bundle.min.js"></script>
 
     <!-- Component Scripts -->
+    <script src="./assets/js/components/preloader.js"></script>
     <script src="./assets/js/components/navbar.js"></script>
     <script src="./assets/js/components/footer.js"></script>
 

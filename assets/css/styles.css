@@ -1155,126 +1155,478 @@ body {
   text-decoration: underline;
 }
 
-/* Principal Message */
+/* ============================================= */
+/* ===== PRINCIPAL SECTION (Premium Design) ==== */
+/* ============================================= */
 
-.principal-message {
-  background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark));
+.principal-section {
   position: relative;
+  padding: 100px 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
   overflow: hidden;
-  padding: 80px 0;
 }
 
-.principal-card {
-  border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+/* Animated Background Shapes */
+.principal-bg-shapes {
+  position: absolute;
+  inset: 0;
   overflow: hidden;
-  transition: transform 0.3s ease;
-  background: var(--card-bg) !important;
-  border: 1px solid var(--border-color);
-  backdrop-filter: blur(10px);
+  pointer-events: none;
 }
 
-.principal-card:hover {
-  transform: translateY(-10px);
+.principal-bg-shapes .shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: floatShape 15s ease-in-out infinite;
 }
 
-.profile-side {
-  background: linear-gradient(135deg, var(--accent-teal), var(--secondary-dark));
-  color: white;
+.principal-bg-shapes .shape-1 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.principal-bg-shapes .shape-2 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+  bottom: -50px;
+  left: -50px;
+  animation-delay: -5s;
+}
+
+.principal-bg-shapes .shape-3 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -10s;
+}
+
+@keyframes floatShape {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* Premium Glassmorphism Card */
+.principal-card-premium {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.principal-card-premium:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, 0.35),
+    0 0 60px rgba(59, 130, 246, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Profile Side */
+.principal-profile {
+  background: linear-gradient(180deg, #1e3a5f 0%, #0f172a 100%);
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
 }
 
-.profile-img {
+.principal-profile::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60%;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+/* Avatar with Animated Ring */
+.principal-avatar-wrapper {
+  position: relative;
+  margin: 0 0 1.5rem 0;
+}
+
+.principal-avatar {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  border: 5px solid rgba(255, 255, 255, 0.3);
   object-fit: cover;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background: transparent;
-}
-
-.message-side {
-  padding: 3rem 2.5rem;
-  background: var(--card-bg);
-}
-
-.message-side .section-title {
-  color: var(--accent-teal) !important;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 4px rgba(59, 130, 246, 0.2);
   position: relative;
-  display: inline-block;
+  z-index: 2;
+  transition: all 0.4s ease;
 }
 
-.message-side .section-title::after {
-  content: '';
+.avatar-ring {
   position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 50px;
-  height: 3px;
-  background: var(--accent-teal);
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px dashed rgba(59, 130, 246, 0.4);
+  animation: rotateRing 20s linear infinite;
 }
 
-.quote-text {
-  font-size: 1.4rem;
-  line-height: 1.8;
-  color: var(--text-light) !important;
-  font-weight: 500;
-  margin-bottom: 2rem;
+@keyframes rotateRing {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.signature {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1.5rem;
+.principal-card-premium:hover .principal-avatar {
+  transform: scale(1.05);
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(59, 130, 246, 0.3);
 }
 
-.principal-name {
+/* Principal Info */
+.principal-info {
+  width: 100%;
+}
+
+.principal-name-text {
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-light) !important;
-  margin-bottom: 0.3rem;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
 }
 
-.principal-title {
-  color: var(--text-muted) !important;
-  font-size: 0.9rem;
+.principal-role {
+  font-size: 0.95rem;
+  color: rgba(148, 163, 184, 0.9);
+  margin: 0 0 1.5rem 0;
+  font-weight: 500;
 }
 
-.social-links {
-  margin-top: 1.5rem;
+/* Social Icons */
+.principal-social {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
-.social-links a {
+.social-icon {
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  margin: 0 5px;
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.65);
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1.1rem;
   text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.social-links a:hover { background: #0830b4 !important; 
-  transform: translateY(-3px);
-   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8); 
-   }
+.social-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
+}
 
+.social-icon:hover::before {
+  opacity: 0.25;
+}
 
-.text-center.p-4 {
-  color: var(--text-muted) !important;
-  background: rgba(0, 0, 0, 0.2);
+.social-icon.whatsapp {
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.15);
+}
+
+.social-icon.facebook {
+  color: #1877F2;
+  background: rgba(24, 119, 242, 0.15);
+}
+
+.social-icon.email {
+  color: #EA4335;
+  background: rgba(234, 67, 53, 0.15);
+}
+
+.social-icon:hover {
+  transform: translateY(-4px) scale(1.1);
+}
+
+.social-icon.whatsapp:hover {
+  background: #25D366;
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.social-icon.facebook:hover {
+  background: #1877F2;
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+}
+
+.social-icon.email:hover {
+  background: #EA4335;
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(234, 67, 53, 0.4);
+}
+
+/* Message Content Side */
+.principal-message-content {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Message Header */
+.message-header {
+  margin-bottom: 1.5rem;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+  color: #60a5fa;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.message-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Quote Styling */
+.principal-quote {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.quote-mark {
+  color: rgba(59, 130, 246, 0.3);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.quote-mark-open {
+  margin-bottom: 0.5rem;
+}
+
+.quote-mark-close {
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.quote-content {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: rgba(226, 232, 240, 0.95);
+  margin: 0;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Message Footer */
+.message-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+
+.signature-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  transition: width 0.4s ease;
+}
+
+.principal-card-premium:hover .signature-line {
+  width: 100px;
+}
+
+.signature-block {
+  display: block;
+  font-style: normal;
+}
+
+.sig-name {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.sig-title {
+  display: block;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* ===== PRINCIPAL SECTION RESPONSIVE ===== */
+
+@media (max-width: 991px) {
+  .principal-card-premium {
+    grid-template-columns: 280px 1fr;
+  }
+
+  .principal-avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .principal-message-content {
+    padding: 2.5rem;
+  }
+
+  .message-title {
+    font-size: 1.75rem;
+  }
+
+  .quote-content {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .principal-section {
+    padding: 60px 0;
+  }
+
+  .principal-card-premium {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .principal-profile {
+    padding: 2.5rem 2rem;
+  }
+
+  .principal-profile::after {
+    display: none;
+  }
+
+  .principal-avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .principal-message-content {
+    padding: 2rem;
+  }
+
+  .message-title {
+    font-size: 1.5rem;
+  }
+
+  .quote-content {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .principal-section {
+    padding: 40px 0;
+  }
+
+  .principal-card-premium {
+    border-radius: 24px;
+    margin: 0 1rem;
+  }
+
+  .principal-profile {
+    padding: 2rem 1.5rem;
+  }
+
+  .principal-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .principal-name-text {
+    font-size: 1.25rem;
+  }
+
+  .principal-message-content {
+    padding: 1.5rem;
+  }
+
+  .section-badge {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .message-title {
+    font-size: 1.3rem;
+  }
+
+  .quote-content {
+    font-size: 0.95rem;
+  }
+
+  .sig-name {
+    font-size: 1rem;
+  }
 }
 
 /* Responsive Design */
@@ -2713,19 +3065,21 @@ textarea.form-input {
 }
 
 /* Event Card Content (when using images) */
+/* Event Card Content (when using images) */
 .event-card:has(.event-img) {
-  padding-bottom: 1.5rem;
+  padding-bottom: 0;
 }
 
+/* Padding and margins are handled by event-card-body now */
 .event-card:has(.event-img) .event-title,
 .event-card:has(.event-img) .event-desc,
 .event-card:has(.event-img) .event-badge {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .event-card:has(.event-img) .event-title {
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 /* Event Card without image - add padding */
@@ -2753,45 +3107,31 @@ textarea.form-input {
   color: white;
 }
 
-.event-date {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  text-align: center;
-  background: rgba(37, 99, 235, 0.15);
-  padding: 0.5rem 0.75rem;
-  border-radius: 10px;
-  border: 1px solid rgba(37, 99, 235, 0.3);
-}
-
-.event-date .day {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--accent-teal);
-  line-height: 1;
-}
-
-.event-date .month {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
+/* Event Card Content */
+/* Event Card Content */
+.event-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  /* Better handling of spacing between elements */
 }
 
 .event-title {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-light);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
+  /* Reduced because of gap */
 }
 
 .event-desc {
   color: var(--text-muted);
   font-size: 0.9rem;
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  /* Reduced because of gap */
 }
 
 .event-badge {
@@ -2801,8 +3141,10 @@ textarea.form-input {
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  margin-top: 0.75rem;
-  margin-left: 20px;
+  margin-top: auto;
+  /* Push to bottom if we want stretch, otherwise just flow */
+  margin-left: 0;
+  /* Fix indentation */
 }
 
 .event-badge.sports {
@@ -2865,8 +3207,8 @@ textarea.form-input {
 }
 
 [data-theme="light"] .event-date {
-  background: rgba(59, 130, 246, 0.1);
-  border-color: rgba(59, 130, 246, 0.2);
+  background: rgba(1, 40, 99, 0.733);
+  border-color: rgba(3, 26, 49, 0.13);
 }
 
 /* ===== Projects Page Styles ===== */
@@ -4000,36 +4342,46 @@ textarea.form-input {
 [data-theme="light"] .team-member-info h5 {
   color: #0f172a;
 }
+
 .social-link-card:hover i {
-    color: #1d4ed8;
+  color: #1d4ed8;
 }
+
 .social-link-card:hover span {
-    color: #1d4ed8; 
+  color: #1d4ed8;
 }
-.event-badge{
-  margin-left: 15px ;
+
+.event-badge {
+  margin-left: 15px;
 }
+
 /* ..................modified code........... */
 .site-footer {
   --text-muted: #94a3b8;
 }
+
 .site-footer {
   color-scheme: dark;
   --text-muted: #94a3b8;
 }
+
 .site-footer {
   color-scheme: dark;
   --text-muted: #94a3b8;
 }
+
 .site-footer .footer-made-by {
   color: #94a3b8 !important;
 }
+
 .site-footer .fa-heart {
   color: #ef4444 !important;
 }
+
 .site-footer a.developers-link {
   color: #60a5fa !important;
 }
+
 .site-footer {
   --text-primary: #e2e8f0 !important;
   --bg-primary: transparent !important;
